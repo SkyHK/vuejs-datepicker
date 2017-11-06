@@ -2,6 +2,8 @@
   <div class="vdp-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
     <div :class="{'input-group' : bootstrapStyling}">
       <!-- Calendar Button -->
+      <span v-if="labelspan" class="control-label">{{labelspan}}</span>
+      <!-- Calendar Button -->
       <span class="vdp-datepicker__calendar-button" :class="{'input-group-addon' : bootstrapStyling}" v-if="calendarButton" @click="showCalendar" v-bind:style="{'cursor:not-allowed;' : disabledPicker}">
         <i :class="calendarButtonIcon">
           <span v-if="!calendarButtonIcon">&hellip;</span>
@@ -107,6 +109,7 @@ import DateLanguages from '@/utils/DateLanguages.js'
 
 export default {
   props: {
+    labelspan:String,
     value: {
       validator: function (val) {
         return val === null || val instanceof Date || typeof val === 'string'
