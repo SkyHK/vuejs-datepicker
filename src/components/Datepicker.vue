@@ -109,7 +109,7 @@ import DateLanguages from '@/utils/DateLanguages.js'
 
 export default {
   props: {
-    labelspan:String,
+    labelspan: String,
     value: {
       validator: function (val) {
         return val === null || val instanceof Date || typeof val === 'string'
